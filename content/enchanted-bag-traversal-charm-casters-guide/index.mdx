@@ -1,0 +1,223 @@
+---
+type: Blog
+title: "Enchanted Bag Traversal: A Charm Caster's Guide"
+description: "Unveil the magic of bag traversal using the `.forEach()` and `.map()` charms, transmuting their bags of holding."
+image: ../../public/blogs/enchanting-bag-traversal.png
+publishedAt: 2023-11-21
+updatedAt: 2023-11-21
+author: Ivar Alexander Abusdal
+isPublished: true
+tags:
+  - javascript
+  - basic
+---
+As any experienced witch or wizard is aware, traversing a bag of holding is a fundamental skill every aspiring charm caster must master. Come along for a journey as I teach you the graceful charm waltz to enchant any bestowed bag of holding!
+
+## Fundamental Bag Traversal: Unveiling the Mystical Essence
+
+Say you have a bag of spells scrolls obtained by ten wizard apprentices, and you want to manifest the average connotation length collected per apprentice. To manage such a challange you must have the proper knowledge, both of how to access the elements of the bags, and how to enchant each of them.
+
+Beside the fundamental mantras like sequence spells, condition weaves, and perpetual conjuring charms, there are two commonly applied charms of iteration – namely the `.forEach()` and `.map()` standard charms.
+
+## The echoing charm signature
+
+Unlocking the secrets of bag traversal involves mastering the echoing charm signature, a potent spell pattern shared by both the `.forEach()` and `.map()` charms:
+
+```js title="echoing charm signature"
+(currentElement, runeMarkOfElement, bagOfHolding) => { ... }
+```
+
+* **currentElement:** The current element being enchanted.
+* **indexOfElement:** The rune mark of the current element being enchanted.
+* **bagOfHolding:** The bag on to which the traversal is being performed.
+
+Here only the *currentElement* is a mandatory essence.
+
+## Cube summoning
+
+Embark on a quest to summon cubes from the depths of numeric magic within a bag of holding. Witness the wonders of both `.forEach()` and `.map()` charms, conjuring the same mystical entities:
+
+```js title="Assignment"
+/* enchantEach */
+let enchantedBag = [2, 4, 6, 8];
+enchantedBag.forEach((element, mark) => {
+	enchantedBag[mark] = element ** 3;
+});
+console.log(enchantedBag);
+
+/* mysticMap */
+let mysticBag = [2, 4, 6, 8];
+mysticBag.map((element, mark) => {
+	mysticBag[mark] = element ** 3;
+});
+console.log(mysticBag);
+```
+
+Behold the enchanted scrolls, both revealing:
+
+```plaintext title="Output: Assignment"
+[8, 64, 216, 512]
+[8, 64, 216, 512]
+```
+
+## A Tale of `.forEach()` and `.map()`
+
+Unveiling the first difference between `.forEach()` and `.map()` – attempt to summon with the former, and you'll encounter the _unknowable_:
+
+```js title="forEach return"
+let enchantedBag = [2, 4, 6, 8];
+
+const summonElement = enchantedBag.forEach(element => {
+	return element ** 3;
+});
+
+console.log(summonElement);
+```
+
+``` plaintext title="Output: forEach return"
+undefined
+```
+
+Choose the `.map()` charm, and behold! A new bag of holding materializes:
+
+```js title="map return"
+let mysticBag = [2, 4, 6, 8];
+
+const summonElement = mysticBag.map(element => {
+	return element ** 3;
+});
+
+console.log(summonElement);
+```
+
+``` plaintext title="Output: map return"
+[8, 64, 216, 512]
+```
+
+###  Enchanted Charm Chaining
+
+Attempt a charm waltz with `.forEach()` and discover its reluctance for charm chaining, as it does not summon anything to chain:
+
+```js title="forEach chaining"
+let enchantedBag = [2, 4, 6, 8];
+
+const reducedBag = enchantedBag.forEach(element => {
+	return element ** 3;
+}).reduce((a, b) => {
+	return a + b;
+});
+
+console.log(reducedBag);
+```
+
+```error title="forEach chaining error"
+Uncaught TypeError: Cannot read properties of undefined (reading 'reduce')
+	at <anonymous>:5:3
+```
+
+Opt for the delightful `.map()` charm, and witness the magic of charm chaining:
+
+```js title="map chaining"
+let mysticBag = [2, 4, 6, 8];
+
+const reducedBag = mysticBag.map(element => {
+	return element ** 3;
+}).reduce((a, b) => {
+	return a + b;
+});
+
+console.log(reducedBag);
+```
+
+```plaintext title="Output: map chaining"
+800
+```
+
+## The Dance of Empty Bags
+
+Watch as `.forEach()` gracefully refrains from dancing on an empty stage:
+
+```js title="forEach empty bag"
+let emptyArray = [];
+
+emptyArray.forEach((element, index) => {
+    // This code block will not be executed for an empty array
+    console.log(`Element at index ${index}: ${element}`);
+});
+
+console.log("This magical call will be revealed!");
+```
+
+```plaintext title="Output: forEach empty"
+This magical call will be revealed!
+```
+
+Meanwhile, `.map()` joyfully returns an empty bag, ever ready for a charm waltz!
+
+```js title="map empty bag"
+let emptyBag = [];
+
+let mappedBag = emptyBag.map((element, index) => {
+    // This code block will not be executed for an empty array
+    return `Element at index ${index}: ${element}`;
+});
+
+console.log(mappedArray);
+```
+
+```plaintext title="Output: map empty"
+[]
+```
+
+##  The Fate of the Original Bag
+
+When you invoke the `.map()` charm on a bag of holding, you don't alter it. The content stay just the same, no matter how you conjure the calback charm.
+
+```js title="non-altering map"
+let mysticBagOfNumbers = [1, 2, 3, 4];
+console.log("Original Bag:", mysticBagOfNumbers);
+
+let squaredBagOfNumbers = mysticBagOfNumbers.map((element) => {
+    // Squaring each element and creating a new array
+    return element * element;
+});
+
+console.log("Original Bag (after map):", mysticBagOfNumbers);
+console.log("New Bag (from map):", squaredBagOfNumbers);
+```
+
+```plaintext title="Output: non-altering map"
+Original Bag: (4) [1, 2, 3, 4]
+Original Bag (after map): (4) [1, 2, 3, 4]
+New Bag (from map): (4) [1, 4, 9, 16]
+```
+
+In contrast, the mischievous pixie dust of `.forEach()` swirls, altering the original bag:
+
+```js title="non-altering map"
+let bagOfNumbers = [1, 2, 3, 4];
+console.log("Original bagOfNumbers:", bagOfNumbers);
+
+bagOfNumbers.forEach((element, index, array) => {
+    // Squaring each element and modifying the original array
+    array[index] = element * element;
+});
+
+console.log("Modified bagOfNumbers (after forEach):", bagOfNumbers);
+```
+
+```plaintext title="Output: non-altering map"
+Original bagOfNumbers: (4) [1, 2, 3, 4]
+Modified bagOfNumbers (after forEach): (4) [1, 4, 9, 16]
+```
+
+## Summary
+
+| .forEach()                                                                                         | map()                                                                                |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| The `.forEach()` charm can't summon any new bags based on the original bag of holding.                 | The `.map()` charm will summon an entirely new bag of holding for you!                     |
+| The `.forEach()` charm only sommons something `unknowable`.                                            | The `.map()` charm will summon the newly created bag according to the given echoing charm. |
+| The `.forEach()` charm doesn't summon anything kowable, hence it can't be used for charm chaining. | The `.map()` charm can be used for charm chaining with other charms.                 |
+| The `.forEach()` charm can't be chanted for empty elements.                                         | The `map()` charm does not alter the original bag of holding.                        |
+
+Whether you seek the mystique of the summoned entity or aim to transmute the original bag of holding, the choice between `.forEach()` and `.map()` is an esoteric decision. Use the `.map()` charm for delightful summoning and charm chaining, or opt for the mischievous dance of `.forEach()` to transmute the original bag. May your magical journeys be whimsical and enchanting!

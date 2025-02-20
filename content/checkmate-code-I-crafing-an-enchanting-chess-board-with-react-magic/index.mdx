@@ -1,0 +1,468 @@
+---
+type: Blog
+title: "Checkmate Code I: Crafting an Enchanting Chess Board with React Magic"
+description: "Embark on a mystical coding journey with React, Tailwind, and TypeScript to conjure a captivating chess board."
+image: "../../public/blogs/chess-board/cover-image.png"
+publishedAt: "2023-11-23"
+updatedAt: "2023-11-23"
+author: "Ivar Alexander Abusdal"
+isPublished: true
+tags:
+- react
+- javascript
+- typescript
+- tailwind
+- chess
+---
+
+Behold, fellow enchanters! In this initial installment, we'll conjure the foundation – a responsive board adorned with coordinates – paving the way for the formidable challenges of implementing pieces and rules in the chapters to come.
+
+In case you find yourself ensnared, seek the mystical solutions within the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a> for this enthralling project.
+
+Peer into the [mystical reflection of the enchanted finale](https://ivar-abusdal-blog.vercel.app/demos/checkmate-code-i), a mere suggestion of the magical outcome that awaits. Feel free to cast your own spells of alteration upon it, for the magic is yours to shape and command.
+
+## General Incantations
+
+To commence our mystical project, we shall harness the powers of <a href="https://vitejs.dev/" target="_blank">Vite</a>, <a href="https://react.dev/" target="_blank">React</a>, <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>, and <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>. Fear not if these incantations seem unfamiliar – we shall guide you through the occult rituals.
+
+```
+npm create vite@latest
+```
+
+Follow the prompts, choosing the path of <em>React</em>, and embrace <em>TypeScript</em> with the bewitching <em>SWC</em> variant. Once summoned, traverse into the mystical realm.
+
+Much of this preternatural journey unfolds with clarity, except for the arcane *SWC*, a transmutational force harnessed by [Next.js](https://nextjs.org/), the very React framework that weaves the fabric of this enchanted website.
+
+Now, traverse to the sacred directory with `cd chess-board`, invoking the command `npm install` and unleashing `npm run dev` to ensure the harmony of elemental forces. Behold, as the ethereal glow of a minimalistic *Vite + React* website materializes while the development server weaves its arcane threads. To infuse our creation with the essence of style, execute these mystical commands:
+
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+Let *Tailwind* unfold, paving the way for the dance of styles to embellish our enchanting creation. Now, inscribe your mark upon the esoteric scroll of `tailwind.config.js`:
+
+```js title="tailwind.config.js" {2-5} 
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Replace the essence of `index.css` with these sacred directives, each resonating with the hermetic layers of *Tailwind*:
+
+```css title="index.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+For now, let us focus our magical energies on the heart of our endeavor, the `src/App.tsx` scroll. Begin this mystical journey by purifying it. Cast away the unnecessary incantations by removing these highlighted lines:
+
+```tsx title="App.tsx" { 1-3,  7-8, 10-31 }
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
+}
+
+export default App
+```
+
+Then, weave a spell to conjure the essence of structure and meaning. Add the divine _div_ and _heading_ as illuminated below:
+
+```tsx title="App.jsx" { 5-9 }
+import './App.css'
+
+function App() {
+  return (
+	<div className="absolute top-0 left-0 w-full h-full 
+			flex justify-center items-center bg-slate-800">
+		<h1 className="text-6xl font-bold text-white/60">
+			Chess Board
+		</h1>
+	</div>
+  )
+}
+
+export default App
+```
+
+If the magic has woven as intended above, you shall now witness the grand proclamation of the _Chess Board_ title, majestically emerging in the very heart of your scrying glass.
+
+<Image src="/blogs/chess-board/setup.png"
+	   width="600"
+	   height="600"
+	   alt="Initial React with Taiwind setup" />
+
+Behold the arcane knowledge bestowed upon thee! The `App()` incantation, a formidable React root component, materializes within the `<div id="root"></div>` sanctum of the `index.html` grimoire. All forthcoming conjurations shall nestle within this sacred abode. The mystic language, known as *JSX*, akin to the ancient scrolls of *HTML*, guides the uninitiated; seek enlightenment within the sacred manuscript of the <a href="https://react.dev/learn" target="_blank">React archives</a>.
+
+In this mystical realm, embrace the term `className` in lieu of `class`, a *React* tradition where *CSS* incantations hail from the script of *Tailwind*. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind testament</a> whenever unfamiliar runes surface. Further, delve into the ancient codex of CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" target="_blank">Grid</a> – for in their wisdom, you shall find prowess, as we traverse their spiritual landscapes.
+
+The transcendent journey into the realm of chess unfolds before us! Prepare, for we are now poised to commence upon the enchanting creation of the board!
+
+## Embarking on the Creation of the Chess Board
+
+We shall weave the tapestry of our chess realm by dividing it into the ethereal entities of *the board* and *the square*. Beginning our magical odyssey by forging the *Board* component! Create a sanctuary folder named `components` enclosed by the realm of `src`– and within it, inscribe the spellbound script of `Board.tsx`.
+
+```tsx title="Board.tsx"
+const Board = () => {
+    return (
+        <div className="w-[60vw] h-[60vw] bg-white">
+            This is the Chess Board Speaking!
+        </div>
+    )
+}
+
+export default Board;
+```
+
+Call forth the *Board* component from the depths of your supernatural repertoire! Import its essence and let it manifest within the incantations of your `App.tsx`. Let the conjured *Board* materialize in the sacred dance of *JSX*.
+
+```tsx title="App.tsx" {2, 8}
+import './App.css'
+import Board from './components/Board'
+
+function App() {
+  return (
+	<div className="absolute top-0 left-0 w-full h-full
+            flex justify-center items-center bg-slate-800">
+		<Board />
+	</div>
+  )
+}
+
+export default App
+```
+
+Behold the canvas of enchantment! A vast, responsive expanse, a white square summoned to dominate the mystical window before you. The essence of your incantations materializes in pure, magical radiance.
+
+<Image src="/blogs/chess-board/white-board.png"
+	   width="600"
+	   height="600"
+	   alt="White responsive square for the chess board" />
+
+### A Tailwind Customization Interlude
+
+In the sacred tome of Tailwind, within the mystical configuration known as `tailwind.config.js`, inscribe these cryptic runes under the glyphs of `extend`:
+
+```js title="tailwind.config.js" {9-12}
+/** @type {import('tailwindcss').Config} */
+export default {
+content: [
+	"./index.html",
+	"./src/**/*.{js,ts,jsx,tsx}",
+	],
+	theme: {
+		extend: {
+			'8': 'repeat(8, minmax(0, 1fr))',
+			colors: {
+				light: "#fadcb9",
+				dark: "#a08c78",
+			}
+		},
+	},
+	plugins: [],
+}
+```
+
+In the arcane palette of colors, behold the hues of `light` and `dark`, destined to grace our sanctified squares in the forthcoming invocations. Feel free to wield your sorcerer's wand to tweak these tones at your discretion. As for the cryptic numeral `8`, it is a key to unlock the holy grid, extending its reach to encompass the revered eight-by-eight, a realm beyond the conventional six-row grids in the standard lexicon of *Tailwind*.
+
+## Conjuring the Squares
+
+Now, let's conjure the *Square* component into existence, crafting it within the sacred realms of the `components` folder as `Square.tsx`.
+
+```tsx title="Square.tsx"
+const Square = () => {
+	return (
+		<div className="w-full h-full border
+				border-solid border-black" />
+	)
+}
+
+export default Square;
+```
+
+Next, let's enchant the board by populating it with mystical gray squares, seamlessly weaving them into a captivating grid while bidding farewell to the mundane white background.
+
+```tsx title="Board.tsx" {5-13, 16-19}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+            squares.push(
+                <Square />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
+
+```
+
+In the mystical tapestry of creation, a simple nested incantation loop is woven, conjuring forth an array of 64 sacred squares. These ethereal squares are summoned into existence within the confines of an eight-by-eight grid – aligning harmoniously from the celestial realms of the top left to the earthly bounds of the bottom right. Witness the enchantment unfold before your eyes, revealing a celestial pattern akin to this:
+
+<Image src="/blogs/chess-board/gray-grid.png"
+	   width="600"
+	   height="600"
+	   alt="Gray chess board squares" />
+
+The configuration of the sacred `tailwind.config.js` has been attuned to the transcendent frequencies of `grid-rows-8`, ensuring the proper manifestation of this arcane grid on your viewing scrying glass.
+
+## Infusing the Chess Board with Colors
+
+To embark on the true journey of chessboard creation, we must infuse the squares with the essence of color, aligning them with the cosmic dance of light and shadow. In the sanctum of the *Square* component, the black border is banished, making way for a celestial algorithm that discerns the rightful hue of each square.
+
+```tsx title="Square.tsx"
+interface SquareProps {
+	file: number;
+	row: number;
+}
+
+const Square : React.FC<SquareProps> = ({file, row}) => {
+
+	let color : string;
+
+	if (file % 2 === 0 && row % 2 !== 0 ||
+		file % 2 !== 0 && row % 2 === 0) {
+		color = "bg-dark";	
+	} else {
+		color = "bg-light";
+	}
+
+	return (
+		<div className={`${color} w-full h-full`} />
+	)
+}
+
+export default Square;
+```
+
+In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry, where a *colon*, akin to a sorcerer's sigil, shapes the essence of variables like `color`, dictating the types they shall embrace.
+
+Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very shape and structure of an object. Behold, the incantation of `React.FC`, a *TypeScript* enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
+
+```tsx title="Board.tsx" {10}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+            squares.push(
+                <Square file={file} row={row} />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
+```
+
+Guided by the ethereal properties of `file` and `row`, the *Square* receives a divine revelation, discerning whether it is ordained to embody the brilliance of light or the enigmatic shadows of darkness.
+
+<Image src="/blogs/chess-board/chess-board.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with colored squares" />
+
+The mystic values of `dark` and `light`, inscribed in the ancient script of `tailwind.config.js`, converge to manifest the visual symphony of the chessboard.
+
+## Weaving the Mystical Coordinates
+
+In the seductive realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates, embracing the ancient wisdom. Files adorned with letters from **a** to **h**, and rows bearing numbers **1** to **8**, guides us through the cosmic tapestry.
+
+```tsx title="Square.tsx"
+interface squareProps {
+    file: number;
+    row: number;
+}
+
+const Square : React.FC<squareProps> = ({file, row}) => {
+
+    const fileLetters : Array<string> =
+	    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const rowNumbers : Array<string> =
+	    ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+    const name : string = fileLetters[file-1] +
+		rowNumbers.reverse()[row-1];
+
+    let color : string;
+
+    if (file % 2 === 0 && row % 2 !== 0 ||
+        file % 2 !== 0 && row % 2 === 0) {
+        color = "bg-dark text-light";
+    } else {
+        color = "bg-light text-dark";
+    }
+
+	return (
+		<div className={`${color} h-full w-full flex
+				flex-col place-content-center`}>
+            <p className="sm:font-bold text-xs sm:text-base
+		            lg:text-xl xl:text-4xl">{name}</p>
+        </div>
+	)
+}
+
+export default Square;
+```
+
+Behold the wondrous orchestration of the mystical *size:class* notation – a spectral incantation that weaves responsive spells across the chessboard. As the enthralling melodies of *Tailwind* resonate through the cosmos, the coordinates dance with the changing tides of scrying glass dimensions.
+
+<Image src="/blogs/chess-board/chess-coordinates.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with coordinates" />
+
+## Manifesting the square numbers
+
+Finally, conjuring the sequence of mystical square numbers, each imbued with a key, a subtle enchantment to guide us through the arcane paths of more intricate logic in the realms that lie ahead.
+
+```tsx title="Square.tsx" /squareNumber/ 
+interface squareProps {
+    file: number;
+    row: number;
+    squareNumber: number;
+}
+
+const Square : React.FC<squareProps> = ({file, row, squareNumber}) => {
+
+    const fileLetters : Array<string> =
+	    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const rowNumbers : Array<string> =
+	    ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+    const name : string = fileLetters[file-1] +
+		rowNumbers.reverse()[row-1];
+
+    let color : string;
+
+    if (file % 2 === 0 && row % 2 !== 0 ||
+        file % 2 !== 0 && row % 2 === 0) {
+        color = "bg-dark text-light";
+    } else {
+        color = "bg-light text-dark";
+    }
+
+	return (
+		<div key={squareNumber}
+				className={`${color} h-full w-full flex
+				flex-col place-content-center`}>
+            <p className="sm:font-bold text-xs sm:text-base
+		            lg:text-xl xl:text-4xl">
+		        {name}
+			</p>
+		    <p className="text-xs md:text-sm lg:text-xl">
+			    {squareNumber}
+			</p>
+        </div>
+	)
+}
+
+export default Square;
+```
+
+```tsx title="Board.tsx" {10, 13, 16}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+			
+			const squareNumber = (row - 1) * 8 + file;
+            
+            squares.push(
+                <Square key={squareNumber}
+		                file={file}
+		                row={row}
+		                squareNumber={squareNumber} />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
+```
+
+Gaze upon the result, a marvel of sensitivity, where the chessboard adapts and transforms like a shape-shifting windigo. In this mystical display, the coordinates unfold in harmony, a testament to the magical synergy between the ancient art of chess and the modern spells of *Tailwind*.
+
+<Image src="/blogs/chess-board/square-numbers.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with coordinates" />
+
+Prepare yourself for the grand unveiling of the chess pieces, where the very essence of the game comes to life. In the upcoming chapters, the *pawns*, *knights*, *bishops*, *rooks*, *queens*, and *kings* shall materialize on the enchanted board, each with its own magical presence and captivating movements.
+
+You can again bewitness the [mystical reflection of the enchanted finale](https://ivar-abusdal-blog.vercel.app/demos/checkmate-code-i), or check out the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a>, if you are in need of guidance.
+
+As we delve deeper into the realms of *React* and *Tailwind*, the chess pieces will emerge as dynamic entities, dancing across the board with the grace of ancient enchantments.
+
+Join us on this mystical journey, as the chessboard transforms into a battleground of strategic prowess and visual splendor. Until then, may your ciphers be as elegant as the noble moves on the chessboard, and your charm casting adventures be filled with splendour!
+

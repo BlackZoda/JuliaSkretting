@@ -1,0 +1,203 @@
+---
+type: Blog
+title: ".NET Microverse: Crafting Resilient Microservices for Galactic Code Mastery!"
+description: "Explore the cosmos of distributed systems and unleash the power of .NET magic."
+image: "../../public/blogs/dotnet-microverse.png"
+publishedAt: "2023-11-13"
+updatedAt: "2023-11-13"
+author: "Ivar Alexander Abusdal"
+isPublished: true
+tags: 
+- microservices
+- csharp
+- dotnet
+---
+
+Once upon a time, in the magical land of Tailwindia, styling articles, documents, or blog posts with Tailwind was as easy as casting a spell. However, the default behavior of Tailwind, like a mischievous pixie, removed all the default browser styling, causing a bit of chaos among the wizards and witches who just wanted to style their content from rich-text editors or markdown files.
+
+The wizards at **Tailwind HQ** heard the grumblings of the magical folks:
+
+> "Why, oh why, is Tailwind removing the magic from my `h1` elements? Can't we stop this? And what's this about losing all the other base styles?"
+
+In response, the Tailwind wizards concocted the `@tailwindcss/typography` potion. This magical elixir introduced a new `prose` class, a spell that could transform any block of vanilla HTML content into a beautiful, well-formatted document:
+
+```html
+<article className="prose">
+  <h1>The Enchantment of Garlic Bread with Cheese</h1>
+  <p>
+    For ages, parents have extolled the virtues of consuming garlic bread
+    adorned with cheese, turning it into an iconic dish cherished even in
+    wizardry culture, where children often masquerade as warm, cheesy loaves
+    for Halloween.
+  </p>
+  <p>
+    Alas! A recent magical study reveals a potential connection between
+    this celebrated appetizer and a surge in rabies cases across the realm.
+  </p>
+</article>
+```
+
+For more magical spells and charms included in the `@tailwindcss/typography` plugin, consult the <a href="http://www.abusdal.pro">Book of Documentation</a>.
+
+---
+
+## A Magical Journey Ahead
+What unfolds next is a fantastical tapestry of absolute nonsense, woven to put the plugin through its paces. It incorporates every sensible and magical typographic element: **bold enchantments**, lists of magical ingredients, `mystical code blocks`, ethereal block quotes, and *even italics*.
+
+Why, you might ask?
+
+1. To ensure everything looks spellbinding out of the box.
+2. Primarily the first reason, as that's the essence of the plugin.
+3. For a third whimsical reason, a list with three items appears more mystical than a list with two.
+
+Now, let's explore another enchanting header style.
+
+### The Art of Typography
+So, behold! A header for you — crafted with care, hoping it looks magically reasonable.
+
+A sage once shared these words about typography:
+
+> Typography is the essence of magic. A spell to ensure your creations don't end up looking like enchanted trash. Make it good, and it shall not be bad.
+
+It's crucial that even images radiate magical vibes:
+
+<Image
+src="/blogs/mystical-woods.png"
+width="718"
+height="404"
+alt="Enchanted Image"
+sizes="100vw"
+/>
+
+Now, witness an example of a list, magically designed to captivate:
+
+- The first mystical item in this enchanted list.
+- In this incantation, we keep the items succinct.
+- Later, we shall unveil longer, more complex list items.
+
+And thus concludes this mystical section.
+
+## Stacking Headings: A Magical Feat
+
+### Ensuring Harmony in Header Stacking
+
+Sometimes, headers stack upon each other in a magical dance. In such cases, we often need to harmonize the top margin on the second header, for a seamless flow of magic.
+
+### When a Header Conjures After a Paragraph...
+
+When a header follows a paragraph, a bit more space is needed, as mentioned earlier. Now, let's delve into what a more complex list could unveil.
+
+- A magical practice of having list items with headers.
+For some arcane reason, this seems cool, though mastering the styles can be as tricky as taming a mythical creature. These list items often harbor two or three paragraphs, adding to the complexity.
+
+- Since this is a list, we must have at least two items.
+Explained in the previous list item, a list needs more than one item to be considered magical. Two is good, but three adds an extra sprinkle of enchantment.
+
+- Why not add a third item, just for the magical vibes?
+Two might suffice, but three is the charm. Since whimsy seems to flow effortlessly, why not include it?
+
+Following such lists, a closing statement or paragraph usually materializes, for it seems odd to jump straight to another header.
+
+## Enchanting Code Blocks
+
+By default, code should look spellbinding. While most wizards may wield <a href="https://highlightjs.org/">highlight.js</a> or <a href="https://prismjs.com/">Prism</a>, there's no harm in making code blocks look enchanting without syntax highlighting.
+
+Behold the default incantation within tailwind.config.js:
+
+```js
+module.exports = {
+  purge: [],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+}
+```
+
+May this incantation be pleasing to your magical eyes.
+
+### Nesting Spells: A Magical Conundrum
+
+Nested spells, though rarely advised, can lead to chaos. Yet, for those who dare, we must make it work.
+
+1. Nesting spells is seldom a wise idea.
+   - It might seem organized, but it creates a grotesque shape on the magical screen, challenging to read.
+   - Just as in UIs, flatness is preferred. Nested folders in source code, too, must not multiply like rabbits.
+2. Since more items are needed, here's another spell.
+   - Styling beyond two levels may border on madness. Three levels are deemed perilous.
+   - If one dares to nest four levels deep, they are destined for the dungeons.
+3. Two items hardly form a proper list, three is the magic number.
+   - Please refrain from nesting lists if you wish people to genuinely engage with your magical content.
+   - Nobody wishes to gaze upon such chaos.
+   - Styling such lists is an unwelcome challenge.
+
+The most vexing aspect of lists in Markdown is that `<li>` elements lack a child `<p>` tag unless multiple paragraphs grace the list item. Hence, styling this peculiar situation becomes a task of its own.
+
+- **Another enchanted nested list, this time with a second incantation.**
+  But lo, with a second paragraph.
+  - These list items shall lack `<p>` tags.
+  - A single line each, for they are one-line wonders.
+- **Yet in this second top-level list item, behold, they shall have `<p>` tags.**
+  The vexation intensifies due to spacing peculiarities in this paragraph.
+  - As seen here, a second line brings forth the `<p>` tag.
+    This, dear reader, is the second line in question.
+  - Finally, another list item emerges, for it is a list.
+- A closing list item, unencumbered by nested lists, for what reason? Magic, perhaps.
+
+And finally a sentence to close off this section.
+
+## Enchanting Elements Beyond
+
+Ah, but our magical journey doesn't conclude with mere lists and code incantations. There are more mystical elements to bestow enchantment upon.
+
+I nearly forgot to mention the mystical portals, also known as links, like this gateway to <a href="https://tailwindcss.com/">the Tailwind Castle</a>. The traditional blue hue seemed mundane, so we opted for a dark gray, a shade befitting the edgier side of magic.
+  
+Behold, our magical table of legendary wrestlers:
+
+| Wrestler                | Origin       | Finisher           |
+| ----------------------- | ------------ | ------------------ |
+| Bret "The Hitman" Hart  | Calgary, AB  | Sharpshooter       |
+| Stone Cold Steve Austin | Austin, TX   | Stone Cold Stunner |
+| Randy Savage            | Sarasota, FL | Elbow Drop         |
+| Vader                   | Boulder, CO  | Vader Bomb         |
+| Razor Ramon             | Chuluota, FL | Razor's Edge       |
+
+Our magical scrolls also unveil support for inline spells, such as <a href="contact@example.com">email enchantments</a>.
+
+### The Charm of Code Continues
+
+Inline spells of code shall also bask in the magical aura, like the mention of `<span>` elements or the delightful news about `@tailwindcss/typography`.
+
+### A Magical Twist: `Code` in Headings
+
+Sometimes, I even intertwine code within headings. Though deemed a risky practice, the *"wrap the code blocks in backticks"* charm works wonders, even in the mystical realm.
+
+An additional feat witnessed in ancient grimoires is placing a code tag within a magical link, like the revelation of the [`tailwindcss/docs repository`](https://github.com/tailwindcss/docs). The presence of an underline beneath the backticks adds a touch of unpredictable magic, but the chaos is worth the wisdom shared.
+
+#### The Unseen `h4`!
+
+A mystical revelation! We have summoned an `h4` element. I implore you, refrain from invoking `h5` or `h6` in your magical scripts, for the realms of Medium allow only two levels of heading magic, for a reason known to the mystical creatures. Consider yourself warned!
+
+We abstain from styling them out of the box, for `h4` elements already dance on the edge of size equivalence with body copy. How can one shrink an `h5` even smaller than body copy? A quandary not worth the magical pondering.
+
+### A Ballet of Stacked Headings
+
+Ensuring Elegance with `h4` Elements
+Phew! With the wave of our magical stylus, we have adorned the headings above this sacred text, ensuring they evoke a sense of wonder.
+
+Let us weave a closing incantation, allowing the elements to harmonize in a symphony of magical proportions. I cannot explain the exact reasons, but there's a peculiar magic in concluding with a paragraph of decent length.
+
+What transpires here is perhaps long enough, but the addition of this final sentence can only enhance the magic that binds these words together.
+
+## The Epilogue: GitHub Conjurations
+
+Our magical tome also supports GitHub-flavored spells, thanks to the essence of [`remark-gfm`](https://github.com/remarkjs/remark-gfm).
+
+With this enchantment, extra features unfurl in our markdown. Behold the autolink literals, where a link like www.example.com or https://example.com effortlessly transforms into an `a` tag.
+
+Even mystical email links find their place: contact@example.com.
+
+And thus, our magical journey through the realms of Tailwindia concludes. May your future scripts be filled with enchanted styles, whimsical codes, and a touch of magic only Tailwind can provide.
+
+Farewell, fellow sorcerer, until our paths cross in the next chapter of magical coding adventures.
