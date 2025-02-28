@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --font-pd: 'playfair-display', serif;
+    --font-ibm: 'ibm-plex-sans', sans-serif;
+    --font-sg: 'space-grotesk', sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-ibm);
 }
 
 h1>a>.icon.icon-link:before,
@@ -79,4 +89,30 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
     text-align: center;
     font-size: 1rem;
     color: #747474;
+}
+
+/* KaTeX styling with higher specificity */
+.prose .katex,
+.prose .katex-display .katex {
+    font-family: var(--font-sg) !important;
+}
+
+.prose .katex .mathdefault,
+.prose .katex-display .katex .mathdefault {
+    font-family: var(--font-sg) !important;
+}
+
+.prose .katex .amsrm, 
+.prose .katex .mathit,
+.prose .katex .mathbf,
+.prose .katex-display .katex .amsrm,
+.prose .katex-display .katex .mathit,
+.prose .katex-display .katex .mathbf {
+    font-family: var(--font-sg) !important;
+}
+
+/* Ensure inline and display math both use Space Grotesk */
+.prose .math.math-inline,
+.prose .math.math-display {
+    font-family: var(--font-sg) !important;
 }

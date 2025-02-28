@@ -1,19 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import profileImg from "@/public/iaa_logo.svg"
+import profileImg from "@/public/JSPlain.svg"
 
 const Logo = () => {
     return (
         <Link href="/" className="flex items-center text-dark dark:text-light">
-            <div className="w-10 lg:w-12 rounded-full overflow-hidden mr-1 md:mx-2">
-                <Image src={profileImg} alt="Ivar Alexander Abusdal"
-                        className="w-full h-auto p-1 rounded-full bg-dark"
+            <div className="w-16 lg:w-12 overflow-hidden mr-1 md:mx-2">
+                <Image src={profileImg} alt="Julia Skretting"
+                        className="w-full rounded-sm h-auto p-1"
                         priority
-                        size="33vw" />
+                        size="40vw" />
             </div>
-            <span className="font-sx mt-0.5 font-bold dark:font-semibold text-xl md:text-2xl">
-                Ivar <span className="hidden md:inline lg:hidden">A.</span>
-                <span className="inline sm:hidden lg:inline">Alexander</span> Abusdal
+            <span className="font-pd mb-2 text-xl md:text-2xl">
+                <span className="italic text-accent dark:text-accentDark">Julia</span>Skretting
             </span>
         </Link>
     )

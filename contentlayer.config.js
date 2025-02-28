@@ -77,6 +77,10 @@ const Blog = defineDocumentType(() => ({
 
 const codeOptions = {
     theme: 'material-theme-darker',
+    keepBackground: true,
+    customStyle: {
+        fontFamily: 'var(--font-sg)'
+    }
 }
 
 export default makeSource({

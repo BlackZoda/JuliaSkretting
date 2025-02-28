@@ -12,12 +12,15 @@
                     dark: "#1A2A2E",
                     light: "#F8F5F2",
                     accent: "#4A908D", 
-                    accentDark: "#D98582",
+                    accentDark: "#E67878",
                     gray: "#333333",
                     goldenLight: "#E0C9A6",
                     goldenDark: "#C2A679",
                 },
                 fontFamily: {
+                    pd: ["var(--font-pd)"], // Playfair Display
+                    ibm: ["var(--font-ibm)"], // IBM Plex Sans
+                    sg: ["var(--font-sg)"], // Space Grotesk
                     mr: ["var(--font-mr)"],
                     in: ["var(--font-in)"],
                     sx: ["var(--font-sx)"],

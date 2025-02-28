@@ -98,7 +98,7 @@ export default function BlogPage({ params }) {
                         absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tag name={blog.tags[0]} link={`/categories/${slug(blog.tags[0])}`}
                             className="px-6 text-sm py-2" />
-                    <h1 className="inline-block mt-6 font-semibold capitalize text-light
+                    <h1 className="inline-block mt-6 font-pd font-semibold capitalize text-light
                             text-2xl md:text-3xl lg:text-5xl
                             leading-normal md:leading-normal lg:leading-normal relative w-5/6">
                         {blog.title}

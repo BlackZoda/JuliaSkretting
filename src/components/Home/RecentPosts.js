@@ -9,14 +9,14 @@ const RecentPosts = ({blogs}) => {
     return (<section className="w-full mt-16 pb-10 sm:mt-20 md:mt-32 px-5 sm:px-10
                 md:px-16 xsl:px-24 flex flex-col items-center">
         <div className="flex w-full justify-between">
-            <h2 className="font-sx w-fit inline-block font-bold capitalize text-xl xs:text-3xl sm:text-4xl
+            <h2 className="font-pd w-fit inline-block font-bold capitalize text-xl xs:text-3xl sm:text-4xl
                     md:text-5xl text-accent dark:text-accentDark ml-3 sm:ml-5 lg:ml-10">
-                Enthralling Epistles
+                  Recent Posts
             </h2>
-            <Link href="/categories/all" className="inline-block font-medium lowercase
+            <Link href="/categories/all" className="inline-block font-small lowercase
                     text-accent dark:text-accentDark underline underline-offset-2
                     text-base md:text-lg mr-8 lg:mr-16">
-                Explore the Entire Grimoire
+                  View All
             </Link>
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6

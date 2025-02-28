@@ -8,10 +8,10 @@ const FeaturedPosts = ({blogs}) => {
 
     return (<section className="w-full mt-16 sm:mt-20 md:mt-32 px-5 sm:px-10
                 md:px-16 xsl:px-24 flex flex-col items-center">
-        <h2 className="font-sx w-full inline-block font-bold capitalize text-2xl
+        <h2 className="font-pd w-full inline-block font-bold capitalize text-2xl
                 xs:text-3xl sm:text-4xl md:text-5xl text-accent dark:text-accentDark
                 ml-6 sm:ml-12 lg:ml-20">
-            Sorcerer's Picks
+            Featured Posts
         </h2>
 
         <div className="grid grid-cols-2 grid-rows-2 gap-6 mt-10 sm:mt-16">

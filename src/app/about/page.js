@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import profileCharacter from "@/public/ivaricon.svg";
+import profileCharacter from "@/public/juliaskretting.jpeg";
 import Link from 'next/link';
 
 export const metadata = {
@@ -21,26 +21,16 @@ export default function About() {
                         />
                 </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col text-left items-start
-                    justify-center p-5 xs:p-10 lg:px-16">
-                <h2 className="font-bold capitalize text-xl sm:text-2xl lg:text-4xl
-                        text-center md:text-left">
-                    I&apos;m a fullstack developer, illustrator and graphic designer
+            <div className="w-full md:w-1/2 flex flex-col items-start
+                    p-5 xs:p-10 lg:px-16">
+                <h2 className="w-full font-pd font-bold capitalize text-xl sm:text-2xl
+                      lg:text-4xl text-center md:text-left text-accent dark:text-accentDark">
+                    Researcher &amp; Economist
                 </h2>
                 <p className="font-medium mt-4 text-sm sm:text-base text-center md:text-left">
-                    I&apos;m a full stack developer with experience in C#, Python,
-                    and JavaScript, frameworks such as ASP.NET, React and Next.js, database
-                    solutions such as MS SQL Server and CosmosDB, and cloud providers
-                    like Azure. I&apos;m a quick learner and collaborate closely with
-                    clients to create efficient, scalable, and user-friendly solutions
-                    that solve real-world problems. I also have many years of experience
-                    with illustration and graphic design.
-                </p>
-                <p className="font-medium mt-4 text-sm text-center md:text-left">
-                    Check out my <Link href="http://www.abusdal.pro"
-                        className="text-accent dark:text-accentDark underline-offset-2 underline"
-                        target="_blank" rel="noreferrer">
-                    CV</Link> for more information about me and how to get in contact.
+                    I am a Researcher at Statistics Norway, in the Unit for Macroeconomics, and hold a part-time position as an Adjunct Researcher at BI Norwegian Business School in the Department of Economics.
+                    Most of my time is spent on applied macroeconomics and business cycles analysis. 
+                    My special interests include the interaction between macroeconomics, fiscal and monetary policies, and energy markets.
                 </p>
             </div>
         </section>

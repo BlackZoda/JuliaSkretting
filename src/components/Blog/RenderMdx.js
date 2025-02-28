@@ -18,7 +18,8 @@ const RenderMdx = ({blog}) => {
                 prose sm:prose-base md:prose-lg max-w-max
                 prose-img:rounded-xl prose-em:tracking-wider
                 prose-em:font-sx prose-em:prose-xl prose-em:leading-snug
-                prose-blockquote:font-sx prose-headings:font-sx
+                prose-blockquote:font-sx prose-headings:font-pd
+                prose-h1:font-pd prose-h1:text-4xl md:prose-h1:text-5xl
                 prose-headings:text-accent dark:prose-headings:text-accentDark
                 prose-blockquote:bg-accent/20 prose-blockquote:p-2
                 prose-blockquote:px-6 prose-blockquote:border-accent
@@ -27,11 +28,12 @@ const RenderMdx = ({blog}) => {
                 dark:prose-blockquote:bg-accentDark/20
                 dark:prose-blockquote:border-accentDark
                 dark:prose-li:marker:text-accentDark
-                first-letter:font-sx first-letter:text-5xl
+                first-letter:font-pd first-letter:text-5xl
                 md:first-letter:text-6xl first-letter:inline-block
-                first-letter:pt-[4px] first-letter:float-left
+                first-letter:pt-0 first-letter:float-left
                 first-letter:mr-2 first-letter:text-accent
-                dark:first-letter:text-accentDark">
+                dark:first-letter:text-accentDark
+                [&_.katex]:font-sg">
 
             <MDXContent components={mdxComponents} />
         </div>

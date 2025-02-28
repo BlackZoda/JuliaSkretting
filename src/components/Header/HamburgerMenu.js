@@ -49,8 +49,6 @@ const HamburgerMenu = () => {
                 <Link href="/" className="hover:text-accent dark:hover:text-accentDark mt-1">Home</Link>
                 <Link href="/categories/all" className="my-2 hover:text-accent dark:hover:text-accentDark">Categories</Link>
                 <Link href="/about" className="my-0 hover:text-accent dark:hover:text-accentDark">About</Link>
-                <Link href="http://www.abusdal.pro" target="_blank"
-                        className="my-2 hover:text-accent dark:hover:text-accentDark font-semibold">CV</Link>
                 <button className="my-1 hover:text-accent dark:hover:text-accentDark"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>

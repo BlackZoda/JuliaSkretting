@@ -16,9 +16,7 @@ const StandardMenu = () => {
                 <Link href="/" className="hover:text-accent dark:hover:text-accentDark ml-1">Home</Link>
                 <Link href="/categories/all" className="mx-3 lg:mx-4 hover:text-accent dark:hover:text-accentDark">Categories</Link>
                 <Link href="/about" className="mx-0 hover:text-accent dark:hover:text-accentDark">About</Link>
-                <Link href="http://www.abusdal.pro" target="_blank"
-                        className="mx-3 lg:mx-4 hover:text-accent dark:hover:text-accentDark">CV</Link>
-                <button className="hover:text-accent dark:hover:text-accentDark"
+                <button className="hover:text-accent dark:hover:text-accentDark ml-3"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>
                         { mode === "light" ? <MoonIcon /> : <SunIcon /> }
