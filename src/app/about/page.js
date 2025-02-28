@@ -16,7 +16,7 @@ export default function About() {
                 text-dark dark:text-light">
             <div className="md:w-1/2 justify-center flex">
                 <div className="h-full w-full my-10 mx-10 rounded-2xl overflow-hidden">
-                    <Image src={profileCharacter} alt="Ivar A. Abusdal"
+                    <Image src={profileCharacter} alt="Julian Skretting"
                         className="h-full w-full object-contain object-center"
                         />
                 </div>
