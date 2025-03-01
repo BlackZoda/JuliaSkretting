@@ -12,6 +12,15 @@ export const metadata = {
         default: siteMetaData.title,
     },
     description: siteMetaData.description,
+    icons: {
+        icon: [
+            { url: '/favicon.ico' },
+            { url: '/JSSquare.svg', type: 'image/svg+xml' },
+        ],
+        apple: [
+            { url: '/apple-icon.png' },
+        ],
+    },
     openGraph: {
         title: siteMetaData.title,
         description: siteMetaData.description,
