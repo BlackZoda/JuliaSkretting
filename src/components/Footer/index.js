@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
     
     return (
-        <footer className="mt-16 py-3 px-5 rounded-2xl bg-dark/90 dark:bg-goldenDark m-5 sm:m-10 
+        <footer className="mt-8 py-3 px-5 rounded bg-dark/90 dark:bg-goldenDark m-5 sm:m-10 
                 flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-0 
                 text-light dark:text-dark text-xs sm:text-sm
                 sm:flex-wrap md:flex-nowrap sm:justify-center md:justify-between">
