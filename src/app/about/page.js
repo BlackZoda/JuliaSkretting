@@ -23,7 +23,7 @@ export default function About() {
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-start
                     p-5 xs:p-10 lg:px-16">
-                <h2 className="w-full font-pd font-bold capitalize text-xl sm:text-2xl
+                <h2 className="w-full font-pd font-bold capitalize text-2xl sm:text-3xl
                       lg:text-4xl text-center md:text-left text-accent dark:text-accentDark">
                     Researcher &amp; Economist
                 </h2>

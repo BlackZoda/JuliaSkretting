@@ -17,7 +17,7 @@ const HamburgerMenu = () => {
     return (
         <>
             <button type="button"
-                    className="inline-block sm:hidden z-50 fixed right-10"
+                    className="inline-block md:hidden z-50 fixed right-10"
                     onClick={toggleBurgerMenu}
                     aria-label="Hamburger Menu">
                 <div className="w-7 cursor-pointer transition-all ease duration-300">
@@ -40,7 +40,7 @@ const HamburgerMenu = () => {
                 </div>
             </button>
             <nav className="w-max py-3 px-5 border border-solid border-dark dark:border-light
-                    rounded-3xl text-lg top-20 capitalize flex flex-col sm:hidden items-center
+                    rounded-3xl text-lg top-20 capitalize flex flex-col md:hidden items-center
                     fixed translate-x-1/2 bg-light/80 dark:bg-dark/80 backdrop-blur-sm z-50
                     transition-all ease duration-500 text-dark dark:text-light"
                     style={{
@@ -48,7 +48,9 @@ const HamburgerMenu = () => {
                     }}>
                 <Link href="/" className="hover:text-accent dark:hover:text-accentDark mt-1">Home</Link>
                 <Link href="/categories/all" className="my-2 hover:text-accent dark:hover:text-accentDark">Categories</Link>
-                <Link href="/about" className="my-0 hover:text-accent dark:hover:text-accentDark">About</Link>
+                <Link href="/research" className="my-1 hover:text-accent dark:hover:text-accentDark">Research</Link>
+                <Link href="/about" className="my-1 hover:text-accent dark:hover:text-accentDark">About</Link>
+                <Link href="/cv" className="my-1 hover:text-accent dark:hover:text-accentDark">CV</Link>
                 <button className="my-1 hover:text-accent dark:hover:text-accentDark"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>
