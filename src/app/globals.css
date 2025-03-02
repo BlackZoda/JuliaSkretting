@@ -91,6 +91,11 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
     color: #747474;
 }
 
+.prose em {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
 /* KaTeX styling with higher specificity */
 .prose .katex,
 .prose .katex-display .katex {

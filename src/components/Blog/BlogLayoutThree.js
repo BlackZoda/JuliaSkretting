@@ -6,14 +6,14 @@ import React from "react";
 const BlogLayoutThree = ({blog}) => {
     return (
         <div className="group flex flex-col items-center text-dark dark:text-light">
-            <Link href={blog.url} className="col-span-4 h-full rounded-xl overflow-hidden">
+            <Link href={blog.url} className="col-span-4 w-full h-full rounded-xl overflow-hidden">
                 <Image src={blog.image.filePath.replace("../public", "")}
                         placeholder="blur"
                         blurDataURL={blog.image.blurhashDataUrl}
                         alt={blog.title}
                         width={blog.image.width} 
                         height={blog.image.height}
-                        sizes="{max-width: 640} 100vw, {max-width: 1200px} 100vw, 50vw"
+                        sizes="100vw, {max-width: 640} 100vw, {max-width: 1200px} 100vw"
                         className="aspect-[4/3] w-full h-full object-cover
                                 object-center group-hover:scale-105 transition-all
                                 ease duration-300" />
