@@ -55,50 +55,31 @@ export default function CVPage() {
             <Heading level={3}>
                 Presentations
             </Heading> 
-            <Heading level={4}>
-                Policy
-            </Heading>
-            <PresentationTable 
-                columns={["Event", "Role", "Date"]}
-                data={[
-                    {},
-                    { event: "Kåkånomics", role: "Presenter", date: "2024-10-01" },
-                ]}
-            />
             <PresentationSection 
                 title="Policy" 
-                items={[
-                    "Presenter at Economic Survey Press Conference, Statistics Norway",
-                    "Invited speaker, 'Fagdag' at Nærings- og fiskeridepartementet (NFD). October 2023",
-                    "Talk at Business Breakfasts at Netherlands Embassy. 2023",
-                    "Frequent presentations of Economic Survey at Arbeids- og Inkluderingsdepartementet, Norges Bank, Finansdepartementet.",
-                    "Kåkånomics, October 2024"
-                ]} 
-            />
-            <Heading level={4}>
-                Academic Conferences
-            </Heading>
+            >
+                <span>Presenter at Economic Survey Press Conference, Statistics Norway</span>
+                <span>Invited speaker, 'Fagdag' at Nærings- og fiskeridepartementet (NFD). October 2023</span>
+                <span>Talk at Business Breakfasts at Netherlands Embassy. 2023</span>
+                <span>Frequent presentations of Economic Survey at Arbeids- og Inkluderingsdepartementet, Norges Bank, Finansdepartementet.</span>
+                <span>Kåkånomics, October 2024</span>
+            </PresentationSection>
             <PresentationSection 
                 title="Academic Conferences" 
-                items={[
-                    "International Association for Applied Econometrics (IAAE) Annual Conference, Oslo, June, 2023",
-                    "Annual Symposium of the Society for Nonlinear Dynamics and Econometrics, Dallas, March, 2019",
-                    "The International Conference on Computing in Economics and Finance, Milano, June, 2018",
-                    "International Conference on The Economics of Oil, Rio de Janeiro, February-March, 2018",
-                    "The Meeting of the Norwegian Association of Economists, Bergen, January, 2018"
-                ]} 
-            />
-            <Heading level={4}>
-                Media
-            </Heading>
+            >
+                <span>International Association for Applied Econometrics (IAAE) Annual Conference, Oslo, June, 2023</span>
+                <span>Annual Symposium of the Society for Nonlinear Dynamics and Econometrics, Dallas, March, 2019</span>
+                <span>The International Conference on Computing in Economics and Finance, Milano, June, 2018</span>
+                <span>International Conference on The Economics of Oil, Rio de Janeiro, February-March, 2018</span>
+                <span>The Meeting of the Norwegian Association of Economists, Bergen, January, 2018</span>
+            </PresentationSection>
             <PresentationSection 
                 title="Media" 
-                items={[
-                    "Op-eds (Kronikker/innlegg): Dagens Næringsliv, Aftenposten",
-                    "TV Interviews: NRK1 Nyheter, TV2 Nyhetskanalen Nyhetene",
-                    "Other interviews, coverage of research, etc: E24, Aftenposten, Finansavisen"
-                ]} 
-            />
+            >
+                <span>Op-eds (Kronikker/innlegg): Dagens Næringsliv, Aftenposten</span>
+                <span>TV Interviews: NRK1 Nyheter, TV2 Nyhetskanalen Nyhetene</span>
+                <span>Other interviews, coverage of research, etc: E24, Aftenposten, Finansavisen</span>
+            </PresentationSection>
 
             <Heading level={3}>
                 Teaching Experience
