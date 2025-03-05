@@ -31,11 +31,11 @@ export default function CVPage() {
             <PresentationTable 
                 columns={["Period", "Role", "Employer"]}
                 data={[
-                    { period: "Aug 2020 &ndash;", role: "Researcher", employer: "Unit for Macroeconomics, Statistics Norway" },
-                    { period: "Oct 2021 &ndash;", role: "Adjunct Researcher", employer: "Department of Economics, BI Norwegian Business School" },
-                    { period: "Feb 2020 &ndash; Sep 2021", role: "Project Coordinator", employer: "BI Norwegian Business School" },
-                    { period: "Jan 2019 &ndash; Jun 2019", role: "Secretary", employer: "The Research Council of Norway" },
-                    { period: "Aug 2014 &ndash; Jun 2020", role: "PhD in Economics", employer: "Center of Applied Macro and Commodity Prices (CAMP), BI Norwegian Business School" },
+                    { period: "Aug 2020 -", role: "Researcher", employer: "Unit for Macroeconomics, Statistics Norway" },
+                    { period: "Oct 2021 -", role: "Adjunct Researcher", employer: "Department of Economics, BI Norwegian Business School" },
+                    { period: "Feb 2020 - Sep 2021", role: "Project Coordinator", employer: "BI Norwegian Business School" },
+                    { period: "Jan 2019 - Jun 2019", role: "Secretary", employer: "The Research Council of Norway" },
+                    { period: "Aug 2014 - Jun 2020", role: "PhD in Economics", employer: "Center of Applied Macro and Commodity Prices (CAMP), BI Norwegian Business School" },
                 ]}
             />
 
@@ -45,35 +45,60 @@ export default function CVPage() {
             <PresentationTable 
                 columns={["Period", "Degree", "Institution"]}
                 data={[
-                    { period: "Aug 2014 &ndash; Jun 2020", education: "PhD in Economics, Center of Applied Macro and Commodity Prices (CAMP)", institution: "BI Norwegian Business School" },
-                    { period: "Aug 2012 &ndash; Jun 2014", education: "MSc Economics and Business Administration", institution: "NHH Norwegian School of Economics" },
-                    { period: "Aug 2009 &ndash; Jun 2012", education: "BSc in Business and IT", institution: "University of Nordland" },
-                    { period: "Aug 2010 &ndash; Jun 2011", education: "Interior Designer", institution: "Interior School" },
+                    { period: "Aug 2014 - Jun 2020", degree: "PhD in Economics, Center of Applied Macro and Commodity Prices (CAMP)", institution: "BI Norwegian Business School" },
+                    { period: "Aug 2012 - Jun 2014", degree: "MSc Economics and Business Administration", institution: "NHH Norwegian School of Economics" },
+                    { period: "Aug 2009 - Jun 2012", degree: "BSc in Business and IT", institution: "University of Nordland" },
+                    { period: "Aug 2010 - Jun 2011", degree: "Interior Designer", institution: "Interior School" },
                 ]}
             />
 
             <Heading level={3}>
                 Presentations
             </Heading> 
-            <PresentationSection title="Policy">
-                <span>Presenter at Economic Survey Press Conference, Statistics Norway</span>
-                <span>Invited speaker, 'Fagdag' at Nærings- og fiskeridepartementet (NFD). October 2023</span>
-                <span>Talk at Business Breakfasts at Netherlands Embassy. 2023</span>
-                <span>Frequent presentations of Economic Survey at Arbeids- og Inkluderingsdepartementet, Norges Bank, Finansdepartementet.</span>
-                <span>Kåkånomics, October 2024</span>
-            </PresentationSection>
-            <PresentationSection title="Academic Conferences">
-                <span>International Association for Applied Econometrics (IAAE) Annual Conference, Oslo, June, 2023</span>
-                <span>Annual Symposium of the Society for Nonlinear Dynamics and Econometrics, Dallas, March, 2019</span>
-                <span>The International Conference on Computing in Economics and Finance, Milano, June, 2018</span>
-                <span>International Conference on The Economics of Oil, Rio de Janeiro, February-March, 2018</span>
-                <span>The Meeting of the Norwegian Association of Economists, Bergen, January, 2018</span>
-            </PresentationSection>
-            <PresentationSection title="Media">
-                <span>Op-eds (Kronikker/innlegg): Dagens Næringsliv, Aftenposten</span>
-                <span>TV Interviews: NRK1 Nyheter, TV2 Nyhetskanalen Nyhetene</span>
-                <span>Other interviews, coverage of research, etc: E24, Aftenposten, Finansavisen</span>
-            </PresentationSection>
+            <Heading level={4}>
+                Policy
+            </Heading>
+            <PresentationTable 
+                columns={["Event", "Role", "Date"]}
+                data={[
+                    {},
+                    { event: "Kåkånomics", role: "Presenter", date: "2024-10-01" },
+                ]}
+            />
+            <PresentationSection 
+                title="Policy" 
+                items={[
+                    "Presenter at Economic Survey Press Conference, Statistics Norway",
+                    "Invited speaker, 'Fagdag' at Nærings- og fiskeridepartementet (NFD). October 2023",
+                    "Talk at Business Breakfasts at Netherlands Embassy. 2023",
+                    "Frequent presentations of Economic Survey at Arbeids- og Inkluderingsdepartementet, Norges Bank, Finansdepartementet.",
+                    "Kåkånomics, October 2024"
+                ]} 
+            />
+            <Heading level={4}>
+                Academic Conferences
+            </Heading>
+            <PresentationSection 
+                title="Academic Conferences" 
+                items={[
+                    "International Association for Applied Econometrics (IAAE) Annual Conference, Oslo, June, 2023",
+                    "Annual Symposium of the Society for Nonlinear Dynamics and Econometrics, Dallas, March, 2019",
+                    "The International Conference on Computing in Economics and Finance, Milano, June, 2018",
+                    "International Conference on The Economics of Oil, Rio de Janeiro, February-March, 2018",
+                    "The Meeting of the Norwegian Association of Economists, Bergen, January, 2018"
+                ]} 
+            />
+            <Heading level={4}>
+                Media
+            </Heading>
+            <PresentationSection 
+                title="Media" 
+                items={[
+                    "Op-eds (Kronikker/innlegg): Dagens Næringsliv, Aftenposten",
+                    "TV Interviews: NRK1 Nyheter, TV2 Nyhetskanalen Nyhetene",
+                    "Other interviews, coverage of research, etc: E24, Aftenposten, Finansavisen"
+                ]} 
+            />
 
             <Heading level={3}>
                 Teaching Experience
